@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+  /*en-tête*/
+header {
+  
+  background-color: rgb(123, 107, 107);
+  height: 5em;
+  border-bottom: solid 2px #f8b89b;
+}
+
+h1,
+h1 a {
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  color: #f7f5f4; 
+   }
+
+
+#basket{
+  text-align: center;
+}
+
+#articlePanier, #articleListe {
+    box-shadow: 3px 3px gray, -1em 0 .4em maroon;
+    margin: auto;
+        margin-bottom: auto;
+    margin-bottom: 3%;
+    padding: 1%;
+    text-align: center;
+    width: 40%;
+}
+h2 {
+  font-size: 3em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 2em;
+}
+
+h3 {
+  font-size: 2em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 0.1em;
+}
+
+h4 {
+  font-size: 1em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 0.1em;
+}
+
+p{
+  font-size: 1.2em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 0.1em;
+}
+
+#price::after{
+content: " €";
+font-size: 1em;
+}
+
+#price{
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+.fas {
+  color: #f7f5f4;
+  font-size: 2.5em;
+  margin-left: auto;
+    margin-top: auto;
+    margin-right: 10px;
+    margin-bottom: auto;
+}
+
+.fas:hover {
+  cursor:pointer;
+}
+
+.container {
+  margin:auto; 
+  height:auto;
+}
+
+.presentation {
+  margin-bottom: 4em;
+  text-align: center;
+}
+
+img {
+    color:rgb(44, 41, 41);
+    width: 20%;
+  border-radius:3px;
+  border:2px solid rgb(70, 64, 64);
+  box-shadow:1px 1px 3px rgb(75, 71, 71);
+}
+
+#prixTotal{
+  text-align: center;
+  font-size: 2em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+}
+
+#formulaire{
+  margin-left: 7em;
+  margin-top: 4em;
+}
+
+#valider{
+  margin-left: 37%;
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+
+footer{
+  background-color: rgb(123, 107, 107);
+  border-top: solid 2px #f8b89b;
+  margin-top: 10em;
+}
+
+footer a {
+  font-size: 2em;
+  color: white;
+  font-family: Georgia, serif;
+
+}
+
+a:hover{
+  color: black;
+}
+
+.btn-sm {
+  background-color:rgb(123, 107, 107);
+}

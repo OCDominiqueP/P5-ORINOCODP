@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+  /*en-tête*/
+header {
+  
+  background-color: rgb(123, 107, 107);
+  height: 5em;
+  border-bottom: solid 2px #f8b89b;
+}
+
+h1,
+h1 a {
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  color: #f7f5f4; 
+   }
+
+h2 {
+	font-size: 3em;
+	color: #9b3d12;
+	margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 2em;
+}
+
+.fas {
+	color: #f7f5f4;
+	font-size: 2.5em;
+	margin-left: auto;
+  	margin-top: auto;
+  	margin-right: 10px;
+  	margin-bottom: auto;
+}
+
+.fas:hover {
+	cursor:pointer;
+}
+
+.container {
+  margin:auto; 
+  height:auto;
+}
+
+.presentation {
+	margin-bottom: 4em;
+  text-align: center;
+}
+
+.img_article {
+    width: 350px;
+    height: 250px;
+    margin: 2%;
+    border: 1px solid #c6c4c0
+}
+
+.article {
+    margin: 3% 0 1% 8%;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    background-color: #51473440;
+    width: 85%;
+}
+.name_article {
+    border-bottom: 1px solid beige;
+}
+.bloc_gauche {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
+  text-align: justify
+}
+
+.description_article {
+    font-size: 90%;
+    text-align: justify;
+}
+
+.bloc_droit {
+    font-size: 150%;
+    font-family: Georgia, serif;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.price_article {
+    font-size: 85%;
+    text-align:center;
+}
+
+.selection_article {
+  
+    top: 130px;
+    font-size: 70%;
+    border: 1px solid #a6b9ac;
+    border-radius: 18px;
+    padding: 12px;
+    background-color: #afbcb3;
+    text-decoration: none;
+    margin-left: 40%;
+}
+.selection_article:hover {
+    background-color: #819b88;
+    border: 1px solid #83a08b;
+}
+
+.article:hover {
+    filter: grayscale(0%);
+}
+
+footer{
+  background-color: rgb(123, 107, 107);
+  border-top: solid 2px #f8b89b;
+  margin-top: 10em;
+  
+}
+
+footer a {
+	font-size: 2em;
+  color: white;
+  font-family: Georgia, serif;
+
+}
+
+a:hover{
+	color: black;
+}
+
+.btn-sm {
+  background-color:rgb(123, 107, 107);
+}
