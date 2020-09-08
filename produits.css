@@ -10,12 +10,28 @@ header {
   border-bottom: solid 2px #f8b89b;
 }
 
+@media screen and (max-width: 740px){
+  .container-fluid {
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 h1,
 h1 a {
   font-size: 2.5em;
   letter-spacing: 5px;
   color: #f7f5f4; 
    }
+
+   @media screen and (max-width: 480px){
+    .h1 {
+      font-size: 1.7em;
+    }
+  }
 
 h2 {
 	font-size: 3em;
@@ -25,6 +41,21 @@ h2 {
   margin-top: 2em;
 }
 
+@media screen and (max-width: 480px){
+  h2 {
+    font-size: 0.8em;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: -20px;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 1280px) {
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
 .fas {
 	color: #f7f5f4;
 	font-size: 2.5em;
@@ -32,6 +63,12 @@ h2 {
   	margin-top: auto;
   	margin-right: 10px;
   	margin-bottom: auto;
+}
+
+@media screen and (max-width: 480px){
+  .fas {
+    font-size: 2em;
+  }
 }
 
 .fas:hover {
@@ -55,6 +92,15 @@ h2 {
     border: 1px solid #c6c4c0
 }
 
+@media screen and (max-width: 480px){
+  .img_article {
+    width: 100%;
+    margin: 2%;
+    border: 1px solid #c6c4c0;
+    margin: auto;
+    }
+  }
+
 .article {
     margin: 3% 0 1% 8%;
     border: 1px solid #ccc;
@@ -63,6 +109,21 @@ h2 {
     background-color: #51473440;
     width: 85%;
 }
+
+@media screen and (max-width: 767px){
+  .article {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1920px) {
+  .article {
+    margin: 3% 0 40% 8%;
+  }
+}
+
 .name_article {
     border-bottom: 1px solid beige;
 }
@@ -72,6 +133,15 @@ h2 {
   margin-left: 15px;
   margin-top: 15px;
   text-align: justify
+}
+
+@media screen and (max-width: 767px){
+  .bloc_gauche {
+    font-size: 14px;
+    margin-left: 2px;
+    margin-top: 2px;
+    text-align: center;
+  }
 }
 
 .description_article {
@@ -84,11 +154,24 @@ h2 {
     font-family: Georgia, serif;
     margin-top: 2em;
     margin-bottom: 2em;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px){
+  .bloc_droit {
+    font-size: 100%;
+  }
 }
 
 .price_article {
     font-size: 85%;
     text-align:center;
+}
+
+@media screen and (max-width: 740px){
+  .price_article {
+    margin-top: -20px;
+  }
 }
 
 .selection_article {
@@ -102,6 +185,23 @@ h2 {
     text-decoration: none;
     margin-left: 40%;
 }
+
+@media screen and (max-width: 767px){
+  .selection_article {
+    margin-left: 0px;
+    display:flex;
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px) {
+  .selection_article {
+    margin-left: 0px;
+    display:flex;
+    justify-content: center;
+  }
+}
+
 .selection_article:hover {
     background-color: #819b88;
     border: 1px solid #83a08b;
@@ -136,18 +236,41 @@ h2 {
 
 #product {
   display: flex;
-  width: 70%;
-  height: 500px;
   margin: auto;
   margin-top: 5%;
-  margin-bottom: 8%;
   
 }
 
+@media screen and (max-width: 767px){
+  #product {
+    width: 100%;
+    margin-bottom: 0%;
+    height: 700px;
+  }
+}
+
 #stockage{
-  margin-top: 5em;
-margin-left: 33%;
-font-size: 1.3em;
+  margin-top: 1em;
+  margin-left: 35%;
+  font-size: 1em;
+}
+
+@media screen and (max-width: 767px){
+  #stockage {
+    margin-left: 0%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 990px) {
+  #stockage {
+    margin-left: 10%;
+  }
+}
+
+@media all and (min-width: 991px) and (max-width: 1199px) {
+  #stockage {
+    margin-left: 30%;
+  }
 }
 
 #voirPanier {
@@ -162,11 +285,38 @@ footer{
   margin-top: 10em;
 }
 
+@media screen and (max-width: 767px){
+  footer{
+    margin-top: 5em;
+  }
+}
+
 footer a {
   font-size: 2em;
   color: white;
   font-family: Georgia, serif;
 
+}
+
+@media screen and (max-width: 767px){
+  footer a {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .btn-group-lg > .btn, .btn-lg {
+  padding: 0.4rem;
+  font-size: 1.25rem;
+  border-radius: 3rem;
+  }
 }
 
 a:hover{

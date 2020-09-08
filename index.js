@@ -9,6 +9,24 @@ window.onload = () => {
       let sectionProduit = document.getElementById("produits");
       data.forEach(function (produit) {
 
+//Mise a jour du nombre de produit dans l'onglet panier
+function chargementPanier(){
+  let nombreProduit = localStorage.getItem('qté'); 
+    
+    if(nombreProduit){
+    document.querySelector ('.totalQté').textContent = nombreProduit;
+    }else{
+        document.querySelector ('.totalQté').textContent = 0 ;
+    }
+}
+
+chargementPanier();
+
+
+
+
+
+          
         // Création du HTML
         let bloc = document.createElement("article");
         let blocPhoto = document.createElement("div");
@@ -52,10 +70,10 @@ window.onload = () => {
         description.textContent = produit.description;
         prix.textContent = produit.price + ",00€";
         lienArticle.textContent = "Séléctionner";
-
         
-      });
+        
+      }
 
-    });
-}
-
+  );
+  }
+    )}

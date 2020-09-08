@@ -10,13 +10,22 @@ header {
   border-bottom: solid 2px #f8b89b;
 }
 
+@media screen and (max-width: 740px){
+  .container-fluid {
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 h1,
 h1 a {
   font-size: 2.5em;
   letter-spacing: 5px;
   color: #f7f5f4; 
    }
-
 
 #basket{
   text-align: center;
@@ -31,6 +40,19 @@ h1 a {
     text-align: center;
     width: 40%;
 }
+
+@media screen and (max-width: 1100px){
+  #articlePanier, #articleListe {
+    box-shadow: 3px 3px gray, -1em 0 .4em maroon;
+    margin: auto;
+        margin-bottom: auto;
+    margin-bottom: 3%;
+    padding: 1%;
+    text-align: center;
+    width: 90%;
+  }
+}
+
 h2 {
   font-size: 3em;
   color: #9b3d12;
@@ -39,12 +61,41 @@ h2 {
   margin-top: 2em;
 }
 
+@media screen and (max-width: 480px){
+  h2 {
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: -20px;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 1280px) {
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
+a {
+  font-size: 1em;
+}
+
 h3 {
   font-size: 2em;
   color: #9b3d12;
   margin: auto;
   font-family: Georgia, serif;
   margin-top: 0.1em;
+}
+
+@media screen and (max-width: 767px){
+  h3 {
+    font-size: 1.2em;
+    color: #9b3d12;
+    margin: auto;
+    font-family: Georgia, serif;
+    margin-top: 0.1em;
+  }
 }
 
 h4 {
@@ -82,6 +133,12 @@ font-size: 1em;
     margin-bottom: auto;
 }
 
+@media screen and (max-width: 480px){
+  .fas {
+    font-size: 2em;
+  }
+}
+
 .fas:hover {
   cursor:pointer;
 }
@@ -104,17 +161,43 @@ img {
   box-shadow:1px 1px 3px rgb(75, 71, 71);
 }
 
+@media screen and (max-width: 767px){
+  img {
+    width: 40%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1200px) {
+  img {
+    width: 40%;
+  }
+}
+
 #prixTotal{
   text-align: center;
-  font-size: 2em;
+  font-size: 1.9em;
   color: #9b3d12;
   margin: auto;
   font-family: Georgia, serif;
 }
 
+@media screen and (max-width: 767px){
+  #prixTotal{
+    font-size: 1.5em;
+  }
+}
+
 #formulaire{
   margin-left: 7em;
   margin-top: 4em;
+  
+}
+
+@media screen and (max-width: 799px){
+  #formulaire{
+    margin-left: 0em;
+
+  }
 }
 
 #valider{
@@ -123,17 +206,55 @@ img {
   font-size: 1.5em;
 }
 
+@media screen and (max-width: 767px){
+  #valider{
+    margin-left: 17%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1200px) {
+  #valider{
+    margin-left: 27%;
+  }
+}
+
 footer{
   background-color: rgb(123, 107, 107);
   border-top: solid 2px #f8b89b;
   margin-top: 10em;
 }
 
+@media screen and (max-width: 767px){
+  footer{
+    margin-top: 5em;
+  }
+}
+
 footer a {
   font-size: 2em;
   color: white;
   font-family: Georgia, serif;
+}
 
+@media screen and (max-width: 767px){
+  footer a {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .btn-group-lg > .btn, .btn-lg {
+  padding: 0.4rem;
+  font-size: 1.25rem;
+  border-radius: 3rem;
+  }
 }
 
 a:hover{

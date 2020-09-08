@@ -269,16 +269,19 @@ let request = new XMLHttpRequest();
         console.log(typeof prix);
         console.log( prix);
         
-         //Des que la requete est envoyé, on bascule sur la page de confirmation 
-         window.location.href = "confirmation.html";
-       }
-     };
-
+         //Des que la requete est envoyé, on bascule sur la page de confirmation
+          window.location.href = "confirmation.html";
+        }
+      };
+ request.open("post", "http://localhost:3000/api/furniture/order");
+ request.setRequestHeader("Content-Type", "application/json");
+ request.send(achat);
 } 
-} 
-  );
 
 }
 
 
-}})}
+  
+       
+  );
+}}})}

@@ -23,7 +23,8 @@ window.onload = () => {
         let ajoutPanier = document.createElement ('button');
         let voirPanier = document.createElement('button');
         let label = document.createElement('label');
-      
+        
+        
       
         // Attribution des classes
         bloc.setAttribute("class", "article");
@@ -35,9 +36,9 @@ window.onload = () => {
         description.setAttribute("class", "texte_description");
         blocDroit.setAttribute("class", "bloc_droit");
         prix.setAttribute("class", "price_article");
-        couleur.setAttribute("id", "choix_couleur");
+        couleur.setAttribute("id", "choix_couleur"); 
         ajoutPanier.setAttribute("id", "stockage");
-        voirPanier.setAttribute("id", "voirPanier");
+        
   
         // Hiérarchie dans les éléments créés
         let sectionProduit = document.getElementById("product");
@@ -52,8 +53,8 @@ window.onload = () => {
         blocDroit.appendChild(prix);
         blocDroit.appendChild(label);
         blocDroit.appendChild(couleur);
-        blocPhoto.appendChild(ajoutPanier);
-        blocDroit.appendChild(voirPanier);
+        blocGauche.appendChild(ajoutPanier);
+        
       
   
         // Remplissage du contenu des balises
@@ -61,11 +62,11 @@ window.onload = () => {
         nomArticle.textContent = produit.name;
         description.textContent = produit.description;
         prix.textContent = produit.price + ",00€";
-        couleur.textContent = produit.varnish;
-        label.textContent = "Couleur ";
+        couleur.innerHTML = produit.varnish; 
+        label.textContent = "Couleur "; 
         ajoutPanier.textContent = "Ajouter au panier";
         voirPanier.textContent = "Voir mon panier";
-  
+        
         
   //Mise a jour du nombre de produit dans l'onglet panier
   function chargementPanier(){
@@ -78,6 +79,7 @@ window.onload = () => {
       }
   }
   
+
   // on affiche l'article demandé à l'ouverture de la page produits
   
   let panier = localStorage.getItem('panier');
@@ -135,6 +137,9 @@ window.onload = () => {
       }
   }
   
+
+
+
    // bouton voir le panier (panier.html)   
       
       voirPanier.addEventListener('click', function(e) {
@@ -142,4 +147,4 @@ window.onload = () => {
       });
   });
   
-      })}  
+      })}
