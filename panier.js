@@ -73,7 +73,7 @@ if( data == null || total == 0 ) {
     let supprime = document.createElement('button');
     supprime.textContent = "supprimer l'article";
     supprime.id = "supprime";
-              
+    
     // mise en place des éléments dans le DOM
   
     basket.appendChild(article);  
@@ -176,8 +176,9 @@ products = Object.values(panier).map( (data) => {
 
 productId(products);
 
-  achat.addEventListener('click', function(e) {
-          window.location.href = "confirmation.html";
+achat.addEventListener('click', function(e) {
+  window.location.href = "https://ocdominiquep.github.io/P5-ORINOCODP/confirmation.html";
+  
 
 
 // Récupérer la valeur des champs saisis par le client
@@ -269,19 +270,22 @@ let request = new XMLHttpRequest();
         console.log(typeof prix);
         console.log( prix);
         
-         //Des que la requete est envoyé, on bascule sur la page de confirmation
-          window.location.href = "confirmation.html";
-        }
-      };
- request.open("post", "http://localhost:3000/api/furniture/order");
- request.setRequestHeader("Content-Type", "application/json");
- request.send(achat);
-} 
-
-}
-
-
-  
+         //Des que la requete est envoyé, on bascule sur la page de confirmation 
+         btn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const validForm = formValidate(); // Valide le formulaire
+          if (validForm !== false) {
+            const response = await postData(
+              "POST",
+              "http://localhost:3000/api/furniture/order",
+              objt
+            ); // Envoie données au serveur
+            window.location = `./confirmation.html?id=${response.orderId}&price=${prixTotal}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
+            localStorage.removeItem("panier");
+          }
+        });
+        
        
-  );
-}}})}
+        }
+   
+   }}})}}})}

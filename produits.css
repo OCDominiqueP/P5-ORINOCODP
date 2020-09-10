@@ -101,6 +101,10 @@ h2 {
     }
   }
 
+  #choix_couleur {
+    width: 140px;
+  }
+  
 .article {
     margin: 3% 0 1% 8%;
     border: 1px solid #ccc;

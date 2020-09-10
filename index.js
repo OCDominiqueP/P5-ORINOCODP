@@ -23,10 +23,6 @@ function chargementPanier(){
 chargementPanier();
 
 
-
-
-
-          
         // Création du HTML
         let bloc = document.createElement("article");
         let blocPhoto = document.createElement("div");

@@ -1,3 +1,5 @@
+
+
 // On attend que le document soit chargé
 window.onload = () => {
     // Ici le document est chargé
@@ -78,7 +80,15 @@ window.onload = () => {
           document.querySelector ('.totalQté').textContent = 0 ;
       }
   }
-  
+
+  // Menu déroulant des couleurs par article
+  let innerHTML = "<select id='select_color'>";
+      for (value of produit.varnish) {
+        innerHTML += "<option value='" + value + "'>" + value + "</option>";
+      }
+      innerHTML += " </select>";
+      couleur.innerHTML = innerHTML;
+
 
   // on affiche l'article demandé à l'ouverture de la page produits
   
