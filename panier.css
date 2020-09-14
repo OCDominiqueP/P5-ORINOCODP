@@ -187,36 +187,34 @@ img {
   }
 }
 
-#formulaire{
-  margin-left: 7em;
+form{
+  text-align: center;
   margin-top: 4em;
-  
 }
 
-@media screen and (max-width: 799px){
-  #formulaire{
-    margin-left: 0em;
-
-  }
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+input[type="submit"] {
+  background-color: rgb(123, 107, 107);
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #f8b89b;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #f3e9f1;
+  color: #f8b89b;
 }
 
-#valider{
-  margin-left: 37%;
-  margin-top: 2em;
-  font-size: 1.5em;
-}
-
-@media screen and (max-width: 767px){
-  #valider{
-    margin-left: 17%;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 1200px) {
-  #valider{
-    margin-left: 27%;
-  }
-}
 
 footer{
   background-color: rgb(123, 107, 107);

@@ -74,6 +74,7 @@ if( data == null || total == 0 ) {
     supprime.textContent = "supprimer l'article";
     supprime.id = "supprime";
     
+    
     // mise en place des éléments dans le DOM
   
     basket.appendChild(article);  
@@ -142,11 +143,6 @@ for(let i=0; i < deleteButtons.length; i++) {
   }; 
 };
 
-//  requete finale de commande contenant les informations de contact et les Id produit
-let formValid = document.getElementById('valider');
-formValid.addEventListener ('click', achat);
-
-function achat() {
 
 // integration d'une alerte si le panier est vide, on ne peut pas passer commande  
 let panier = localStorage.getItem('panier');
@@ -155,137 +151,130 @@ var total = localStorage.getItem('prixTotal');
 if (panier == null || total == 0){
 alert("Votre panier est vide, vous ne pouvez pas passer une commande ! ")
 }  
-// on déclare un tableau de produits pour la requete POST plus tard
-let products = [];
-
-// on fait une fonction pour récupérer les id des produits au panier, pour l'afficher dans la requete POST
-function productId(products) {
-let panier = JSON.parse(localStorage.getItem('panier'));
-
-products = Object.values(panier).map( (data) => {
-  let qté = parseInt(data.qté);
-  console.log(typeof qté);
-  console.log(qté);
-  
-  for (let i = 0 ; i< qté ; i ++){
-      products.push(data._id);  
-    }
-     console.log(products); 
-    return products; 
-   });
-
-productId(products);
-
-achat.addEventListener('click', function(e) {
-  window.location.href = "https://ocdominiquep.github.io/P5-ORINOCODP/confirmation.html";
-  
 
 
-// Récupérer la valeur des champs saisis par le client
-   
-  let firstName = document.getElementById('firstname').value;
-  let lastName = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let address = document.getElementById('address').value;
-  let city = document.getElementById('city').value;
 
-// on met les valeurs dans un objet pour la requete POST
 
-  let contact = {
-      "firstName": firstName,
-      "lastName": lastName,
-      "email": email,
-      "address": address,
-      "city": city,
-  };
 
-// création de l'objet obligatoire pour la requete à envoyer au serveur
-let objt = {
-  contact,
-  products
+const form = document.querySelector("form"); // Récupère le formulaire
+
+const cartInformation = {
+  contact: {},
+  products: [],
 };
 
-let achat = JSON.stringify(objt);
-// console.log(achat);
-// console.log(products);
-
-//afficher une alerte si il manque un renseignement et enregistrer les données dans le localStorage
-var prenom = document.getElementById('firstname');
-var oublisPrenom = document.getElementById('oublisPrenom');
-var prenomValid = /^[a-zA-Z ,.'-]+$/;
-
-var nom = document.getElementById('name');
-var oublisNom = document.getElementById('oublisNom');
-var nomValid = /^[a-zA-Z ,.'-]+$/;
-
-var mail = document.getElementById('email');
-var oublisEmail = document.getElementById('oublisEmail');
-var mailValid = /^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$/;
-
-var adresse = document.getElementById('address');
-var oublisAdress = document.getElementById('oublisAdress');
-var adresseValid = /[0-9a-zA-Z]{1,3}[a-z ,.'-]+$/;
-
-var ville = document.getElementById('city');
-var oublisVille = document.getElementById('oublisVille');
-var villeValid = /^^[a-zA-Z ,.'-]+$/;
-
-if (prenomValid.test(prenom.value) == false){
-  oublisPrenom.textContent = "Format de votre prénom incorrect";
-  oublisPrenom.style.color = 'red';
-  return event.preventDefault();
-
-} else if (nomValid.test(nom.value) == false){
-  oublisNom.textContent = "Format de votre nom incorrect";
-  oublisNom.style.color = 'red';
-  return event.preventDefault();
-
-} else if (mailValid.test(mail.value) == false){
-  oublisEmail.textContent = "Format de votre e-mail incorrect";
-  oublisEmail.style.color = 'red';
-  return event.preventDefault();
-
-} else if (adresseValid.test(adresse.value) == false){
-  oublisAdress.textContent = "Format de votre adresse incorrect";
-  oublisAdress.style.color = 'red';
-  return event.preventDefault();
-
-} else if (villeValid.test(ville.value) == false){
-  oublisVille.textContent = "Format de votre ville incorrect";
-  oublisVille.style.color = 'red';
-  return event.preventDefault();
-
-} else if (panier == null || total == 0){
-  return event.preventDefault();
-
-} else {
-// si tout à été bien rempli, on envoi la commande au serveur, avec toutes les coordonnées du client
-let request = new XMLHttpRequest();
-     request.onreadystatechange = function () {
-       if (this.readyState == XMLHttpRequest.DONE) {
-         let confirmation = JSON.parse(this.responseText);
-         sessionStorage.setItem('order', JSON.stringify(confirmation));
-         let prix = JSON.parse(localStorage.getItem('prixTotal'));
-         sessionStorage.setItem('prix', JSON.stringify(prix));
-        console.log(typeof prix);
-        console.log( prix);
-        
-         //Des que la requete est envoyé, on bascule sur la page de confirmation 
-         btn.addEventListener("click", async (e) => {
-          e.preventDefault();
-          const validForm = formValidate(); // Valide le formulaire
-          if (validForm !== false) {
-            const response = await postData(
-              "POST",
-              "http://localhost:3000/api/furniture/order",
-              objt
-            ); // Envoie données au serveur
-            window.location = `./confirmation.html?id=${response.orderId}&price=${prixTotal}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
-            localStorage.removeItem("panier");
-          }
-        });
-        
-       
-        }
+   const containNumber = /[0-9]/;
+   const regexEmail = /.+@.+\..+/;
+   const specialCharacter = /[$&+,:;=?@#|'<>.^*()%!"{}_"]/;
    
-   }}})}}})}
+   const isNotEmpty = (value) => (value !== "" ? true : false); // Vérifie que la valeur donnée ne soit pas vide
+   const isLongEnough = (value) => (value.length >= 2 ? true : false); // Vérifie que la valeur donnée ait assez de caractère
+   const doNotContainNumber = (value) =>
+     !value.match(containNumber) ? true : false; // Vérifie que la valeur donnée ne possède pas de chiffre
+   const doNotContainSpecialCharacter = (value) =>
+     !value.match(specialCharacter) ? true : false; // Vérifie que la valeur donnée ne possède pas de symbole
+   const isValidEmail = (value) => (value.match(regexEmail) ? true : false); // Vérifie que la valeur donnée soit bien dans le format email
+   
+   const isValidInput = (value) =>
+     isNotEmpty(value) &&
+     isLongEnough(value) &&
+     doNotContainNumber(value) &&
+     doNotContainSpecialCharacter(value); // renvoie true si toutes les conditions sont vérifiées
+   
+   // Récupère les éléments du formulaire
+   const firstName = form.elements.firstName;
+   const lastName = form.elements.lastName;
+   const address = form.elements.address;
+   const city = form.elements.city;
+   const email = form.elements.email;
+   const btn = document.getElementById("btn");
+   
+   const firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
+   const lastNameErrorMessage = document.getElementById("lastNameErrorMessage");
+   const addressErrorMessage = document.getElementById("addressErrorMessage");
+   const cityErrorMessage = document.getElementById("cityErrorMessage");
+   const emailErrorMessage = document.getElementById("emailErrorMessage");
+   
+   //Permet de vérifier les saisies utilisateurs
+   const formValidate = () => {
+     if (isValidInput(firstName.value)) {
+       firstNameErrorMessage.textContent = "";
+   
+       if (isValidInput(lastName.value)) {
+         lastNameErrorMessage.textContent = "";
+   
+         if (isNotEmpty(address.value) && isLongEnough(address.value)) {
+           addressErrorMessage.textContent = "";
+   
+           if (isValidInput(city.value)) {
+             cityErrorMessage.textContent = "";
+   
+             if (isValidEmail(email.value)) {
+               emailErrorMessage.textContent = "";
+   
+               return (cartInformation.contact = {
+                 // Si toutes les inputs saisies sont valides, renvoie l'objet contact à cartInformation
+                 firstName: firstName.value,
+                 lastName: lastName.value,
+                 address: address.value,
+                 city: city.value,
+                 email: email.value,
+               });
+             } else {
+               emailErrorMessage.textContent =
+                 "Merci de renseigner votre adresse mail !";
+               email.focus();
+               return false;
+             }
+           } else {
+             cityErrorMessage.textContent = "Merci de renseigner votre ville !";
+             city.focus();
+             return false;
+           }
+         } else {
+           addressErrorMessage.textContent = "Merci de renseigner votre adresse !";
+           address.focus();
+           return false;
+         }
+       } else {
+         lastNameErrorMessage.textContent = " Merci de renseigner votre nom !";
+         lastName.focus();
+         return false;
+       }
+     } else {
+       firstNameErrorMessage.textContent = "Merci de renseigner votre prénom !";
+       firstName.focus();
+       return false;
+     }
+   };
+   // Envoie données à l'api
+   const postData = async (method, url, dataElt) => {
+     const response = await fetch(url, {
+       headers: {
+         "Content-Type": "application/json"
+       },
+       method,
+       body: JSON.stringify(dataElt),
+     });
+     return await response.json();
+   };
+   
+   btn.addEventListener("click", async (e) => {
+     e.preventDefault();
+     const validForm = formValidate(); // Valide le formulaire
+     if (validForm !== false) {
+       const response = await postData(
+         "POST",
+         "http://localhost:3000/api/furniture/order",
+         cartInformation
+       ); // Envoie données au serveur
+       window.location = `./confirmation.html?id=${response.orderId}&price=${prixTotal}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
+       localStorage.removeItem("panier");
+     }
+   });
+   
+   if (!localStorage.getItem("panier")) {
+     // vérifie que la localstorage est vide, si il est vide on cache le formulaire et on insère le texte
+     cart.textContent = "Votre panier est vide.";
+     form.classList.add("invisible");
+   }})}
