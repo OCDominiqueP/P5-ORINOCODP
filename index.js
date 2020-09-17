@@ -6,6 +6,7 @@ window.onload = () => {
   fetch("http://localhost:3000/api/furniture/")
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       let sectionProduit = document.getElementById("produits");
       data.forEach(function (produit) {
 
@@ -19,9 +20,7 @@ function chargementPanier(){
         document.querySelector ('.totalQté').textContent = 0 ;
     }
 }
-
 chargementPanier();
-
 
         // Création du HTML
         let bloc = document.createElement("article");

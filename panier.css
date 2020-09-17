@@ -114,6 +114,16 @@ p{
   margin-top: 0.1em;
 }
 
+@media screen and (max-width: 767px){
+  p{
+  font-size: 1em;
+  color: #9b3d12;
+  margin: auto;
+  font-family: Georgia, serif;
+  margin-top: 10px;
+  }
+}
+
 #price::after{
 content: " €";
 font-size: 1em;
@@ -185,6 +195,11 @@ img {
   #prixTotal{
     font-size: 1.5em;
   }
+}
+
+#total{
+  text-align: center;
+  font-size: 2em;
 }
 
 form{
@@ -261,4 +276,8 @@ a:hover{
 
 .btn-sm {
   background-color:rgb(123, 107, 107);
+}
+#cart{
+  text-align: center;
+  color: red;
 }

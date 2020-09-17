@@ -151,16 +151,12 @@ var total = localStorage.getItem('prixTotal');
 if (panier == null || total == 0){
 alert("Votre panier est vide, vous ne pouvez pas passer une commande ! ")
 }  
-
-
-
-
-
+const cart = document.querySelector("#cart"); // Récupère la section du panier
 const form = document.querySelector("form"); // Récupère le formulaire
 
 const cartInformation = {
   contact: {},
-  products: [],
+  
 };
 
    const containNumber = /[0-9]/;
@@ -275,6 +271,6 @@ const cartInformation = {
    
    if (!localStorage.getItem("panier")) {
      // vérifie que la localstorage est vide, si il est vide on cache le formulaire et on insère le texte
-     cart.textContent = "Votre panier est vide.";
+     cart.textContent = "Merci de mettre un article dans votre panier pour passer commande.";
      form.classList.add("invisible");
    }})}

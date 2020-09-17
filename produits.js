@@ -1,5 +1,3 @@
-
-
 // On attend que le document soit chargé
 window.onload = () => {
     // Ici le document est chargé
@@ -24,9 +22,7 @@ window.onload = () => {
         let couleur = document.createElement("select");
         let ajoutPanier = document.createElement ('button');
         let voirPanier = document.createElement('button');
-        let label = document.createElement('label');
-        
-        
+        let label = document.createElement('label');       
       
         // Attribution des classes
         bloc.setAttribute("class", "article");
@@ -57,15 +53,13 @@ window.onload = () => {
         blocDroit.appendChild(couleur);
         blocGauche.appendChild(ajoutPanier);
         
-      
-  
         // Remplissage du contenu des balises
         imageArticle.src = produit.imageUrl;
         nomArticle.textContent = produit.name;
         description.textContent = produit.description;
         prix.textContent = produit.price + ",00€";
         couleur.innerHTML = produit.varnish; 
-        label.textContent = "Couleur "; 
+        label.textContent = "Vernis "; 
         ajoutPanier.textContent = "Ajouter au panier";
         voirPanier.textContent = "Voir mon panier";
         
@@ -80,9 +74,10 @@ window.onload = () => {
           document.querySelector ('.totalQté').textContent = 0 ;
       }
   }
-
-  // Menu déroulant des couleurs par article
-  let innerHTML = "<select id='select_color'>";
+  chargementPanier();
+  
+  // Menu déroulant des vernis par article
+      let innerHTML = "<select id='select_color'>";
       for (value of produit.varnish) {
         innerHTML += "<option value='" + value + "'>" + value + "</option>";
       }
@@ -97,6 +92,7 @@ window.onload = () => {
   localStorage.setItem('panier', JSON.stringify(panier));
   chargementPanier(); 
   
+  // bouton Ajout au panier
   ajoutPanier.addEventListener('click', function() {
   alert('Vous avez ajouté ' + produit.name + ' à votre panier')
   ajoutLocalStorage()
@@ -146,15 +142,8 @@ window.onload = () => {
           localStorage.setItem("prixTotal", price);
       }
   }
-  
-
-
-
-   // bouton voir le panier (panier.html)   
-      
-      voirPanier.addEventListener('click', function(e) {
-          window.location.href = "panier.html";
+     
       });
   });
   
-      })}
+      }
