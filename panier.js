@@ -156,8 +156,10 @@ const form = document.querySelector("form"); // Récupère le formulaire
 
 const cartInformation = {
   contact: {},
+  products: [],
   
 };
+
 
    const containNumber = /[0-9]/;
    const regexEmail = /.+@.+\..+/;
@@ -262,9 +264,9 @@ const cartInformation = {
        const response = await postData(
          "POST",
          "http://localhost:3000/api/furniture/order",
-         cartInformation
-       ); // Envoie données au serveur
-       window.location = `./confirmation.html?id=${response.orderId}&price=${prixTotal}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
+         cartInformation);
+         // Envoie données au serveur
+       window.location = `./confirmation.html?id=${response.orderId}&price=${total}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
        localStorage.removeItem("panier");
      }
    });
