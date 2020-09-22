@@ -90,7 +90,6 @@ if( data == null || total == 0 ) {
   }); 
 }; 
 
-    
 // Fonction "supprimer le produit"
 deleteButtons();
 };
@@ -151,13 +150,13 @@ var total = localStorage.getItem('prixTotal');
 if (panier == null || total == 0){
 alert("Votre panier est vide, vous ne pouvez pas passer une commande ! ")
 }  
+
 const cart = document.querySelector("#cart"); // Récupère la section du panier
 const form = document.querySelector("form"); // Récupère le formulaire
 
 const cartInformation = {
   contact: {},
   products: [],
-  
 };
 
 
@@ -220,7 +219,7 @@ const cartInformation = {
                });
              } else {
                emailErrorMessage.textContent =
-                 "Merci de renseigner votre adresse mail !";
+                 "Adresse email incorrect !";
                email.focus();
                return false;
              }
@@ -246,13 +245,13 @@ const cartInformation = {
      }
    };
    // Envoie données à l'api
-   const postData = async (method, url, dataElt) => {
+   const postData = async (method, url, data) => {
      const response = await fetch(url, {
        headers: {
          "Content-Type": "application/json"
        },
        method,
-       body: JSON.stringify(dataElt),
+       body: JSON.stringify(data),
      });
      return await response.json();
    };

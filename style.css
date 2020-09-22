@@ -4,7 +4,6 @@
 
   /*en-tête*/
 header {
-  
   background-color: rgb(123, 107, 107);
   height: 5em;
   border-bottom: solid 2px #f8b89b;
@@ -27,7 +26,6 @@ h1 a {
   color: #f7f5f4; 
    }
    
-
 h2 {
 	font-size: 3em;
 	color: #9b3d12;
@@ -49,9 +47,9 @@ h2 {
 	color: #f7f5f4;
 	font-size: 2.5em;
 	margin-left: auto;
-  	margin-top: auto;
-  	margin-right: 10px;
-  	margin-bottom: auto;
+  margin-top: auto;
+  margin-right: 10px;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 480px){
@@ -73,6 +71,26 @@ h2 {
 	margin-bottom: 4em;
   text-align: center;
 }
+
+img{
+  width: 3em;
+  color:rgb(44, 41, 41);
+  border-radius:3px;
+  border:2px solid rgb(70, 64, 64);
+  box-shadow:1px 1px 3px rgb(75, 71, 71);
+}
+
+.ml-md-5{
+  font-size: 2em;
+  text-shadow: 1px 1px 2px #715353, 0 0 1em #00ffdb, 0 0 0.2em #9f9f9f;
+}
+
+@media screen and (max-width: 740px){
+  .ml-md-5{
+    font-size: 1em;
+  }
+}
+
 
 .img_article {
     width: 350px;
@@ -104,14 +122,14 @@ h2 {
   .article {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: center; 
   }
 }
 
 .name_article {
     border-bottom: 1px solid beige;
 }
+
 .bloc_gauche {
   font-family: Georgia, serif;
   font-size: 20px;
@@ -119,6 +137,7 @@ h2 {
   margin-top: 15px;
   text-align: justify
 }
+
 @media screen and (max-width: 767px){
   .bloc_gauche {
     font-size: 14px;
@@ -172,10 +191,8 @@ h2 {
 
 @media all and (min-width: 768px) and (max-width: 1280px) {
   .selection_article {
-    margin-left: 0px;
     display:flex;
-    justify-content: center;
-    
+    justify-content: center; 
   }
 }
 
@@ -194,7 +211,7 @@ footer{
   margin-top: 10em;
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 767px){
   footer{
     margin-top: 5em;
   }
@@ -206,20 +223,20 @@ footer a {
   font-family: Georgia, serif;
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 767px){
   footer a {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 767px){
   .row {
     display: flex;
     flex-wrap: nowrap;
   }
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 767px){
   .btn-group-lg > .btn, .btn-lg {
   padding: 0.4rem;
   font-size: 1.25rem;

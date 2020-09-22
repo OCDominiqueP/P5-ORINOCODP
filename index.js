@@ -47,6 +47,13 @@ chargementPanier();
         lienArticle.setAttribute("href", "produits.html?id=" + produit._id);
         lienArticle.setAttribute("class", "selection_article");
 
+        // Remplissage du contenu des balises
+        imageArticle.src = produit.imageUrl;
+        nomArticle.textContent = produit.name;
+        description.textContent = produit.description;
+        prix.textContent = produit.price + ",00€";
+        lienArticle.textContent = "Séléctionner";
+        
         // Hiérarchie dans les éléments créés
         sectionProduit.appendChild(bloc);
         bloc.appendChild(blocPhoto);
@@ -58,14 +65,6 @@ chargementPanier();
         blocDescription.appendChild(blocDroit);
         blocDroit.appendChild(prix);
         blocDroit.appendChild(lienArticle);
-
-        // Remplissage du contenu des balises
-        imageArticle.src = produit.imageUrl;
-        nomArticle.textContent = produit.name;
-        description.textContent = produit.description;
-        prix.textContent = produit.price + ",00€";
-        lienArticle.textContent = "Séléctionner";
-        
         
       }
 

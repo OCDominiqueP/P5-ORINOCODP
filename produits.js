@@ -1,8 +1,12 @@
 // On attend que le document soit chargé
 window.onload = () => {
     // Ici le document est chargé
-    const idproduits = window.location.search.substring(4);
-  
+    
+    //const idproduits = window.location.search.substring(4);
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const idproduits = urlParams.get('id');
+
     fetch("http://localhost:3000/api/furniture/" + idproduits)
       .then((res) => res.json())
       .then((data) => {
@@ -37,7 +41,16 @@ window.onload = () => {
         couleur.setAttribute("id", "choix_couleur"); 
         ajoutPanier.setAttribute("id", "stockage");
         
-  
+        // Remplissage du contenu des balises
+        imageArticle.src = produit.imageUrl;
+        nomArticle.textContent = produit.name;
+        description.textContent = produit.description;
+        prix.textContent = produit.price + ",00€";
+        couleur.innerHTML = produit.varnish; 
+        label.textContent = "Vernis "; 
+        ajoutPanier.textContent = "Ajouter au panier";
+        voirPanier.textContent = "Voir mon panier";
+        
         // Hiérarchie dans les éléments créés
         let sectionProduit = document.getElementById("product");
         sectionProduit.appendChild(bloc);
@@ -53,21 +66,10 @@ window.onload = () => {
         blocDroit.appendChild(couleur);
         blocGauche.appendChild(ajoutPanier);
         
-        // Remplissage du contenu des balises
-        imageArticle.src = produit.imageUrl;
-        nomArticle.textContent = produit.name;
-        description.textContent = produit.description;
-        prix.textContent = produit.price + ",00€";
-        couleur.innerHTML = produit.varnish; 
-        label.textContent = "Vernis "; 
-        ajoutPanier.textContent = "Ajouter au panier";
-        voirPanier.textContent = "Voir mon panier";
-        
-        
   //Mise a jour du nombre de produit dans l'onglet panier
   function chargementPanier(){
     let nombreProduit = localStorage.getItem('qté'); 
-      
+    
       if(nombreProduit){
       document.querySelector ('.totalQté').textContent = nombreProduit;
       }else{
@@ -83,14 +85,6 @@ window.onload = () => {
       }
       innerHTML += " </select>";
       couleur.innerHTML = innerHTML;
-
-
-  // on affiche l'article demandé à l'ouverture de la page produits
-  
-  let panier = localStorage.getItem('panier');
-  panier = JSON.parse(panier);
-  localStorage.setItem('panier', JSON.stringify(panier));
-  chargementPanier(); 
   
   // bouton Ajout au panier
   ajoutPanier.addEventListener('click', function() {
@@ -142,8 +136,6 @@ window.onload = () => {
           localStorage.setItem("prixTotal", price);
       }
   }
-     
       });
   });
-  
       }

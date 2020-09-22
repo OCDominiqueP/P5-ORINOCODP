@@ -4,7 +4,6 @@
 
   /*en-tête*/
 header {
-  
   background-color: rgb(123, 107, 107);
   height: 5em;
   border-bottom: solid 2px #f8b89b;
@@ -25,13 +24,13 @@ h1 a {
   font-size: 2.5em;
   letter-spacing: 5px;
   color: #f7f5f4; 
-   }
+}
 
-   @media screen and (max-width: 480px){
-    .h1 {
-      font-size: 1.7em;
-    }
+@media screen and (max-width: 480px){
+  .h1 {
+    font-size: 1.7em;
   }
+}
 
 h2 {
 	font-size: 3em;
@@ -60,9 +59,9 @@ h2 {
 	color: #f7f5f4;
 	font-size: 2.5em;
 	margin-left: auto;
-  	margin-top: auto;
-  	margin-right: 10px;
-  	margin-bottom: auto;
+  margin-top: auto;
+  margin-right: 10px;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 480px){
@@ -85,11 +84,30 @@ h2 {
   text-align: center;
 }
 
+img{
+  width: 3em;
+  color:rgb(44, 41, 41);
+  border-radius:3px;
+  border:2px solid rgb(70, 64, 64);
+  box-shadow:1px 1px 3px rgb(75, 71, 71);
+}
+
+.ml-md-5{
+  font-size: 2em;
+  text-shadow: 1px 1px 2px #715353, 0 0 1em #00ffdb, 0 0 0.2em #9f9f9f;
+}
+
+@media screen and (max-width: 740px){
+  .ml-md-5{
+    font-size: 1em;
+  }
+}
+
 .img_article {
-    width: 350px;
-    height: 250px;
-    margin: 2%;
-    border: 1px solid #c6c4c0
+  width: 350px;
+  height: 250px;
+  margin: 2%;
+  border: 1px solid #c6c4c0
 }
 
 @media screen and (max-width: 480px){
@@ -98,20 +116,20 @@ h2 {
     margin: 2%;
     border: 1px solid #c6c4c0;
     margin: auto;
-    }
   }
+}
 
-  #choix_couleur {
-    width: 140px;
-  }
+#choix_couleur { 
+  width: 140px;
+}
   
 .article {
-    margin: 3% 0 1% 8%;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-    display: flex;
-    background-color: #51473440;
-    width: 85%;
+  margin: 3% 0 1% 8%;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  background-color: #51473440;
+  width: 85%;
 }
 
 @media screen and (max-width: 767px){
@@ -131,6 +149,7 @@ h2 {
 .name_article {
     border-bottom: 1px solid beige;
 }
+
 .bloc_gauche {
   font-family: Georgia, serif;
   font-size: 20px;
@@ -149,16 +168,16 @@ h2 {
 }
 
 .description_article {
-    font-size: 90%;
-    text-align: justify;
+  font-size: 90%;
+  text-align: justify;
 }
 
 .bloc_droit {
-    font-size: 150%;
-    font-family: Georgia, serif;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    text-align: center;
+  font-size: 150%;
+  font-family: Georgia, serif;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px){
@@ -168,8 +187,8 @@ h2 {
 }
 
 .price_article {
-    font-size: 85%;
-    text-align:center;
+  font-size: 85%;
+  text-align:center;
 }
 
 @media screen and (max-width: 740px){
@@ -180,14 +199,14 @@ h2 {
 
 .selection_article {
   
-    top: 130px;
-    font-size: 70%;
-    border: 1px solid #a6b9ac;
-    border-radius: 18px;
-    padding: 12px;
-    background-color: #afbcb3;
-    text-decoration: none;
-    margin-left: 40%;
+  top: 130px;
+  font-size: 70%;
+  border: 1px solid #a6b9ac;
+  border-radius: 18px;
+  padding: 12px;
+  background-color: #afbcb3;
+  text-decoration: none;
+  margin-left: 40%;
 }
 
 @media screen and (max-width: 767px){
@@ -212,13 +231,13 @@ h2 {
 }
 
 .article:hover {
-    filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 .bloc {
   box-shadow: 0 0 0 1px;
   color: #D3D3D3;
-    height: 500px;
+  height: 500px;
 }
 
 .prix {
@@ -226,23 +245,21 @@ h2 {
 }
 
 .panier {
-
   margin-bottom: 7em;
   font-size: 1.2em;
   width: 10em;
 }
-.panier:hover {
-  
+
+.panier:hover {  
   font-size: 1.2em;
   cursor: pointer;
   color: #9b3d12;
-   }
+}
 
 #product {
   display: flex;
   margin: auto;
-  margin-top: 5%;
-  
+  margin-top: 5%;  
 }
 
 @media screen and (max-width: 767px){
@@ -278,9 +295,9 @@ h2 {
 }
 
 #voirPanier {
-margin-top: 2.5em;
-margin-right: 33%;
-font-size: 20px;
+  margin-top: 2.5em;
+  margin-right: 33%;
+  font-size: 20px;
 }
 
 footer{
@@ -304,7 +321,7 @@ footer a {
 
 @media screen and (max-width: 767px){
   footer a {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
@@ -317,9 +334,9 @@ footer a {
 
 @media screen and (max-width: 767px){
   .btn-group-lg > .btn, .btn-lg {
-  padding: 0.4rem;
-  font-size: 1.25rem;
-  border-radius: 3rem;
+    padding: 0.4rem;
+    font-size: 1.25rem;
+    border-radius: 3rem;
   }
 }
 

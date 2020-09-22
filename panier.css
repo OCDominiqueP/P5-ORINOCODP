@@ -4,7 +4,6 @@
 
   /*en-tête*/
 header {
-  
   background-color: rgb(123, 107, 107);
   height: 5em;
   border-bottom: solid 2px #f8b89b;
@@ -25,27 +24,27 @@ h1 a {
   font-size: 2.5em;
   letter-spacing: 5px;
   color: #f7f5f4; 
-   }
+}
 
 #basket{
   text-align: center;
 }
 
 #articlePanier, #articleListe {
-    box-shadow: 3px 3px gray, -1em 0 .4em maroon;
-    margin: auto;
-        margin-bottom: auto;
-    margin-bottom: 3%;
-    padding: 1%;
-    text-align: center;
-    width: 40%;
+  box-shadow: 3px 3px gray, -1em 0 .4em maroon;
+  margin: auto;
+  margin-bottom: auto;
+  margin-bottom: 3%;
+  padding: 1%;
+  text-align: center;
+  width: 40%;
 }
 
 @media screen and (max-width: 1100px){
   #articlePanier, #articleListe {
     box-shadow: 3px 3px gray, -1em 0 .4em maroon;
     margin: auto;
-        margin-bottom: auto;
+    margin-bottom: auto;
     margin-bottom: 3%;
     padding: 1%;
     text-align: center;
@@ -98,6 +97,10 @@ h3 {
   }
 }
 
+#logo{
+  width: 3em;
+}
+
 h4 {
   font-size: 1em;
   color: #9b3d12;
@@ -114,6 +117,11 @@ p{
   margin-top: 0.1em;
 }
 
+.nom{
+  color: white;
+  font-size: 2em;
+  margin-left: 1em;
+}
 @media screen and (max-width: 767px){
   p{
   font-size: 1em;
@@ -125,8 +133,8 @@ p{
 }
 
 #price::after{
-content: " €";
-font-size: 1em;
+  content: " €";
+  font-size: 1em;
 }
 
 #price{
@@ -138,9 +146,9 @@ font-size: 1em;
   color: #f7f5f4;
   font-size: 2.5em;
   margin-left: auto;
-    margin-top: auto;
-    margin-right: 10px;
-    margin-bottom: auto;
+  margin-top: auto;
+  margin-right: 10px;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 480px){
@@ -164,8 +172,8 @@ font-size: 1em;
 }
 
 img {
-    color:rgb(44, 41, 41);
-    width: 20%;
+  color:rgb(44, 41, 41);
+  width: 20%;
   border-radius:3px;
   border:2px solid rgb(70, 64, 64);
   box-shadow:1px 1px 3px rgb(75, 71, 71);
@@ -180,6 +188,17 @@ img {
 @media all and (min-width: 768px) and (max-width: 1200px) {
   img {
     width: 40%;
+  }
+}
+
+.ml-md-5{
+  font-size: 2em;
+  text-shadow: 1px 1px 2px #715353, 0 0 1em #00ffdb, 0 0 0.2em #9f9f9f;
+}
+
+@media screen and (max-width: 740px){
+  .ml-md-5{
+    font-size: 1em;
   }
 }
 
@@ -217,6 +236,7 @@ input[type="email"] {
   margin-top: 6px;
   margin-bottom: 16px;
 }
+
 input[type="submit"] {
   background-color: rgb(123, 107, 107);
   color: white;
@@ -225,11 +245,11 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 input[type="submit"]:hover {
   background-color: #f3e9f1;
   color: #f8b89b;
 }
-
 
 footer{
   background-color: rgb(123, 107, 107);
@@ -251,7 +271,7 @@ footer a {
 
 @media screen and (max-width: 767px){
   footer a {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
@@ -264,9 +284,9 @@ footer a {
 
 @media screen and (max-width: 767px){
   .btn-group-lg > .btn, .btn-lg {
-  padding: 0.4rem;
-  font-size: 1.25rem;
-  border-radius: 3rem;
+    padding: 0.4rem;
+    font-size: 1.25rem;
+    border-radius: 3rem;
   }
 }
 
@@ -276,8 +296,4 @@ a:hover{
 
 .btn-sm {
   background-color:rgb(123, 107, 107);
-}
-#cart{
-  text-align: center;
-  color: red;
 }
