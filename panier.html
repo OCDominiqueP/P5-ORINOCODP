@@ -1,119 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-   <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="index,follow">
-        <script src="https://kit.fontawesome.com/cf469beab2.js" crossorigin="anonymous"></script>
-        
-        <!-- Ajout OpenGraph --> 
-        <meta property="og:title" content="Orinoco site de vente en ligne" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://lien site web github/index.html" />
-        <meta property="og:description" content="Orinoco site spécialisé dans la vente de meubles en chêne" />
-        <meta name="Description" content="Orinoco site spécialisé dans la vente de meubles en chêne">
-        <title>Orinoco panier</title>
-        <link rel="shortcut icon" type="image/jpg" href="favicon_logo.jpg"/>
-        <link rel="stylesheet" href="bootstrap.min.css">      
-        <link rel="stylesheet" href="panier.css">
-        
-    </head>
-    
-    <body>
-        
-        <header>
-            
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <img src="./orinoco_logo.png" id="logo" alt="logo chariot">
-                    <p class="text-white h1 ml-md-5">Orinoco</p>
-                        <p class="text-white mr-md-5">
-                            <a class="panier"  onclick='location.href="panier.html"' data-target="panier">Panier ( <span class="totalQté"></span> )
-                                <i class="fas fa-cart-arrow-down" aria-hidden="true"></i>
-                            </a>
-                            
-                        </p>
-                </div>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <script src="https://kit.fontawesome.com/cf469beab2.js" crossorigin="anonymous"></script>
 
-        <div class="container">
-                        
-            <section class="presentation">
-                <h2>Résumé de votre commande</h2>
-                <br>
-                <a href="./index.html">Continuer mes achats ?</a>
-            </section>
-                
-            <main>
-                <div id="basket"></div>
-                <div id="total"></div>   
-                <div class="container">
-                    <form>
-                        <label for="firstName">Prénom : </label>
-                        <input type="text" id="firstName" name="firstName" />
-                        <p id="firstNameErrorMessage" class="form-error"></p>
-                            
-                        <label for="lastName">Nom : </label>
-                        <input type="text" id="lastName" name="lastName" />
-                        <p id="lastNameErrorMessage" class="form-error"></p>
-                            
-                        <label for="address">Adresse : </label>
-                        <input type="text" id="address" name="address" />
-                        <p id="addressErrorMessage" class="form-error"></p>
-                            
-                        <label for="city">Ville : </label>
-                        <input type="text" id="city" name="city" />
-                        <p id="cityErrorMessage" class="form-error"></p>
-                            
-                        <label for="email">Email : </label>
-                        <input type="email" id="email" name="email" />
-                        <p id="emailErrorMessage" class="form-error"></p>
-                            
-                        <input type="submit" id="btn" value="Valider" />
-                    </form>
-                </div>      
-            </main> 
-              
-        </div>
-           <!-- Footer -->
+    <!-- Ajout OpenGraph -->
+    <meta property="og:title" content="Orinoco site de vente en ligne" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lien site web github/index.html" />
+    <meta property="og:description" content="Orinoco site spécialisé dans la vente de meubles en chêne" />
+    <meta name="Description" content="Orinoco site spécialisé dans la vente de meubles en chêne">
+    <title>Orinoco panier</title>
+    <link rel="shortcut icon" type="image/jpg" href="./img/favicon_logo.jpg" />
+    <link rel="stylesheet" href="./libs/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/panier.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <img src="./img/orinoco_logo.png" id="logo" alt="logo chariot">
+                <p class="text-white h1 ml-md-5">Orinoco</p>
+                <p class="text-white mr-md-5">
+                    <a class="panier" onclick='location.href="panier.html"' data-target="panier">Panier ( <span
+                            class="totalQté"></span> )
+                        <i class="fas fa-cart-arrow-down" aria-hidden="true"></i>
+                    </a>
+
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section class="presentation">
+            <h1>Résumé de votre commande</h1>
+            <br>
+            <a href="./index.html">Continuer mes achats ?</a>
+        </section>
+
+        <main>
+            <div id="basket"></div>
+            <div id="total"></div>
+            <div class="container">
+                <form>
+                    <label for="firstName">Prénom : </label>
+                    <input type="text" id="firstName" name="firstName" />
+                    <p id="firstNameErrorMessage" class="form-error"></p>
+
+                    <label for="lastName">Nom : </label>
+                    <input type="text" id="lastName" name="lastName" />
+                    <p id="lastNameErrorMessage" class="form-error"></p>
+
+                    <label for="address">Adresse : </label>
+                    <input type="text" id="address" name="address" />
+                    <p id="addressErrorMessage" class="form-error"></p>
+
+                    <label for="city">Ville : </label>
+                    <input type="text" id="city" name="city" />
+                    <p id="cityErrorMessage" class="form-error"></p>
+
+                    <label for="email">Email : </label>
+                    <input type="email" id="email" name="email" />
+                    <p id="emailErrorMessage" class="form-error"></p>
+
+                    <input type="submit" id="btn" value="Valider" />
+                </form>
+            </div>
+        </main>
+
+    </div>
+    <!-- Footer -->
     <footer class="page-footer font-small special-color-dark pt-4">
-        
+
         <!-- Footer Elements -->
         <div class="container">
-            
+
             <!--Grid row-->
             <div class="row">
-                
+
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-                    
+
                     <!--Facebook-->
                     <a class="btn-floating btn-lg btn-fb" role="button"></a><a href=https://www.facebook.com/ target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <!--Twitter-->
                     <a class="btn-floating btn-lg btn-tw" role="button"></a><a href=https://twitter.com/home target="_blank"><i class="fab fa-twitter"></i></a>
                     <!--Instagram-->
                     <a class="btn-floating btn-lg btn-ins" role="button"></a><a href=https://www.instagram.com/ target="_blank"><i class="fab fa-instagram"></i></a>
-                    <!-- Form -->                  
+                    <!-- Form -->
                 </div>
-                
+
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-                    
+
                     <button class="btn btn-sm btn-outline-white my-0" type="button"></button><a href="mailto:Orinoco@gmail.com">Contactez-nous</a>
-                    </div>
-                     
                 </div>
-                <!--Grid column-->
-                
+
             </div>
-            <!--Grid row-->
-       
-        </footer>
-        <!-- Footer -->   
-            
-        <script src="panier.js"></script>
-            
-    </body>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </footer>
+    <!-- Footer -->
+
+    <script src="./js/panier.js"></script>
+
+</body>
+
 </html>
