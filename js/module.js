@@ -1,4 +1,4 @@
-export function chargementPanier() {
+function chargementPanier() {
     let nombreProduit = localStorage.getItem('qté');
 
     if (nombreProduit) {
@@ -7,4 +7,3 @@ export function chargementPanier() {
         document.querySelector('.totalQté').textContent = 0;
     }
 }
-chargementPanier();

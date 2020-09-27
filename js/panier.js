@@ -10,15 +10,6 @@ window.onload = () => {
             produit = data;
 
             //Mise a jour du nombre de produit dans l'onglet panier
-            function chargementPanier() {
-                let nombreProduit = localStorage.getItem('qté');
-
-                if (nombreProduit) {
-                    document.querySelector('.totalQté').textContent = nombreProduit;
-                } else {
-                    document.querySelector('.totalQté').textContent = 0;
-                }
-            }
 
             chargementPanier();
 
@@ -33,7 +24,7 @@ window.onload = () => {
                 var prixPanier = document.getElementById('total');
 
                 // affichage du prix total du panier si le panier contient quelque chose...Sinon on affiche "votre panier est vide"
-                if (total != null) {
+                if (total !== null) {
                     prixPanier.textContent = 'Le montant de votre commande est de : ' + total + ' €';
                     prixPanier.id = 'prixTotal';
                 } else {

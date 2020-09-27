@@ -67,15 +67,7 @@ window.onload = () => {
             blocGauche.appendChild(ajoutPanier);
 
             //Mise a jour du nombre de produit dans l'onglet panier
-            function chargementPanier() {
-                let nombreProduit = localStorage.getItem('qté');
 
-                if (nombreProduit) {
-                    document.querySelector('.totalQté').textContent = nombreProduit;
-                } else {
-                    document.querySelector('.totalQté').textContent = 0;
-                }
-            }
             chargementPanier();
 
             // Menu déroulant des vernis par article
@@ -106,7 +98,7 @@ window.onload = () => {
                 panier = JSON.parse(panier);
                 produit.qté = 0;
 
-                if (panier != null) {
+                if (panier !== null) {
 
                     if (panier[produit.name] === undefined) {
                         panier = {...panier, [produit.name]: produit }
@@ -125,7 +117,7 @@ window.onload = () => {
                 let price = parseInt(produit.price / 100);
                 let prixDuPanier = JSON.parse(localStorage.getItem('prixTotal'));
 
-                if (prixDuPanier != null) {
+                if (prixDuPanier !== null) {
                     localStorage.setItem("prixTotal", prixDuPanier + price);
                 } else {
                     localStorage.setItem("prixTotal", price);

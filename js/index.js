@@ -11,7 +11,6 @@ window.onload = () => {
             data.forEach(function(produit) {
 
                     //Mise a jour du nombre de produit dans l'onglet panier
-                    import { chargementPanier } from './module.js';
 
                     chargementPanier();
 
